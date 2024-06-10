@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSetting Namespace="AiCodo">
+	<GlobalParameters>
+		<Paramter Name="" CodeType="" DefaultValue="" />
+	</GlobalParameters>
+	<TypeMappings>
+		<Item ProviderName="mysql" DataType="char" CodeType="string" DefaultValue="string.Empty"/>
+		<Item ProviderName="mysql" DataType="varchar"  CodeType="string" DefaultValue="string.Empty"/>
+		<Item ProviderName="mysql" DataType="text"  CodeType="string" DefaultValue="string.Empty"/>
+		<Item ProviderName="mysql" DataType="mediumtext"  CodeType="string" DefaultValue="string.Empty"/>
+		<Item ProviderName="mysql" DataType="longtext"  CodeType="string" DefaultValue="string.Empty"/>
+		<Item ProviderName="mysql" DataType="int"  CodeType="int" DefaultValue="0"/>
+		<Item ProviderName="mysql" DataType="float"  CodeType="double" DefaultValue="0.0"/>
+		<Item ProviderName="mysql" DataType="double"  CodeType="double" DefaultValue="0.0"/>
+		<Item ProviderName="mysql" DataType="decimal"  CodeType="double" DefaultValue="0.0"/>
+		<Item ProviderName="mysql" DataType="bigint"  CodeType="long" DefaultValue="0"/>
+		<Item ProviderName="mysql" DataType="bit"  CodeType="bool" DefaultValue="true"/>
+		<Item ProviderName="mysql" DataType="datetime"  CodeType="DateTime" DefaultValue="new Date(1900,1,1)"/>
+	</TypeMappings>
+	<Templates>
+		<Item Name="Entity" DisplayName="Entity File" FileName="entity.razor" CodeFileName="" ModelType="Table"/>
+		<Item Name="ClientService" DisplayName="Client Service" FileName="clientservice.razor" CodeFileName="" ModelType="SqlTable"/>
+	</Templates>
+</CodeSetting>

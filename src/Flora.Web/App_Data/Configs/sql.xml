@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SqlData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" AutoGenerateItems="true">
+  <Connections>
+    <Connection Name="aicodo" ProviderName="mysql" ConnectionString="Server=localhost;Port=12306;Database=aicode_demo;Uid=root;Pwd=sa123456;CharSet=utf8;SslMode=none;">
+      <Table Name="sys_member" Schema="aicode_demo" CodeName="Member" Key="ID">
+        <Columns>
+          <Column Name="ID" DisplayName="自动编号" ColumnOrdinal="1" ColumnType="int(11)" DataType="int" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="true" IsReadOnly="true" IsKey="true" IsSystem="false" SystemParameter="" />
+          <Column Name="UserID" DisplayName="用户编号" ColumnOrdinal="2" ColumnType="int(11)" DataType="int" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="0" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="FullName" DisplayName="用户名" ColumnOrdinal="3" ColumnType="varchar(100)" DataType="varchar" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="''" Length="100" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="IsMan" DisplayName="男/女" ColumnOrdinal="4" ColumnType="bit(1)" DataType="bit" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="b'0'" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="CreateUser" DisplayName="创建用户" ColumnOrdinal="5" ColumnType="int(11)" DataType="int" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="CreateTime" DisplayName="创建时间" ColumnOrdinal="6" ColumnType="datetime" DataType="datetime" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="UpdateUser" DisplayName="修改用户" ColumnOrdinal="7" ColumnType="int(11)" DataType="int" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="UpdateTime" DisplayName="修改时间" ColumnOrdinal="8" ColumnType="datetime" DataType="datetime" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="IsValid" DisplayName="是否有效" ColumnOrdinal="9" ColumnType="bit(1)" DataType="bit" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+        </Columns>
+      </Table>
+      <Table Name="sys_user" Schema="aicode_demo" CodeName="User" Key="ID">
+        <Columns>
+          <Column Name="ID" DisplayName="自动编号" ColumnOrdinal="1" ColumnType="int(11)" DataType="int" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="true" IsReadOnly="true" IsKey="true" IsSystem="false" SystemParameter="" />
+          <Column Name="UserName" DisplayName="用户名" ColumnOrdinal="2" ColumnType="varchar(50)" DataType="varchar" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="''" Length="50" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="Email" DisplayName="用户邮箱" ColumnOrdinal="3" ColumnType="varchar(200)" DataType="varchar" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="''" Length="200" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="Password" DisplayName="密码" Comment="这是一个密码" ColumnOrdinal="4" ColumnType="varchar(200)" DataType="varchar" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="''" Length="200" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="CreateUser" DisplayName="创建用户" ColumnOrdinal="5" ColumnType="int(11)" DataType="int" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="CreateTime" DisplayName="创建时间" ColumnOrdinal="6" ColumnType="datetime" DataType="datetime" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="UpdateUser" DisplayName="修改用户" ColumnOrdinal="7" ColumnType="int(11)" DataType="int" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="UpdateTime" DisplayName="修改时间" ColumnOrdinal="8" ColumnType="datetime" DataType="datetime" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+          <Column Name="IsValid" DisplayName="是否有效" ColumnOrdinal="9" ColumnType="bit(1)" DataType="bit" DbType="String" PropertyType="" PropertyName="" Remark="" DefaultValue="" Length="0" NullAble="false" IsAutoIncrement="false" IsReadOnly="false" IsKey="false" IsSystem="false" SystemParameter="" />
+        </Columns>
+      </Table>
+    </Connection>
+  </Connections>
+  <Groups>
+    <Group Name="aicodo">
+      <Table Name="sys_member" ConnectionName="aicodo" TableName="sys_member">
+        <Sql Name="Insert" ConnectionName="aicodo" SqlType="Scalar" Description="新增" IsGenerate="true">
+          <CommandText>
+INSERT INTO `sys_member`
+(`UserID`,`FullName`,`IsMan`,`CreateUser`,`CreateTime`,`UpdateUser`,`UpdateTime`,`IsValid`)
+VALUES(@UserID,@FullName,@IsMan,@CreateUser,@CreateTime,@UpdateUser,@UpdateTime,@IsValid);
+SELECT LAST_INSERT_ID() AS `ID`;
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="Delete" ConnectionName="aicodo" SqlType="Execute" Description="删除" IsGenerate="true">
+          <CommandText>
+DELETE FROM `sys_member` 
+ WHERE `ID`=@ID
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="Update" ConnectionName="aicodo" SqlType="Execute" Description="更新" IsGenerate="true">
+          <CommandText>
+UPDATE `sys_member` SET 
+`UserID`=@UserID
+,`FullName`=@FullName
+,`IsMan`=@IsMan
+,`CreateUser`=@CreateUser
+,`CreateTime`=@CreateTime
+,`UpdateUser`=@UpdateUser
+,`UpdateTime`=@UpdateTime
+,`IsValid`=@IsValid
+ WHERE `ID`=@ID
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="SelectAll" ConnectionName="aicodo" Description="全选" IsGenerate="true">
+          <CommandText>
+SELECT `ID`,`UserID`,`FullName`,`IsMan`,`CreateUser`,`CreateTime`,`UpdateUser`,`UpdateTime`,`IsValid`
+FROM `sys_member` 
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="SelectByKeys" ConnectionName="aicodo" Description="主键选择" IsGenerate="true">
+          <CommandText>
+SELECT `ID`,`UserID`,`FullName`,`IsMan`,`CreateUser`,`CreateTime`,`UpdateUser`,`UpdateTime`,`IsValid`
+FROM `sys_member` 
+WHERE `ID`=@ID
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="Count" ConnectionName="aicodo" SqlType="Scalar" Description="记录数" IsGenerate="true">
+          <CommandText>
+SELECT count(*) FROM `sys_member` 
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+      </Table>
+      <Table Name="sys_user" ConnectionName="aicodo" TableName="sys_user">
+        <Sql Name="Insert" ConnectionName="aicodo" SqlType="Scalar" Description="新增" IsGenerate="true">
+          <CommandText>
+INSERT INTO `sys_user`
+(`UserName`,`Email`,`Password`,`CreateUser`,`CreateTime`,`UpdateUser`,`UpdateTime`,`IsValid`)
+VALUES(@UserName,@Email,@Password,@CreateUser,@CreateTime,@UpdateUser,@UpdateTime,@IsValid);
+SELECT LAST_INSERT_ID() AS `ID`;
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="Delete" ConnectionName="aicodo" SqlType="Execute" Description="删除" IsGenerate="true">
+          <CommandText>
+DELETE FROM `sys_user` 
+ WHERE `ID`=@ID
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="Update" ConnectionName="aicodo" SqlType="Execute" Description="更新" IsGenerate="true">
+          <CommandText>
+UPDATE `sys_user` SET 
+`UserName`=@UserName
+,`Email`=@Email
+,`Password`=@Password
+,`CreateUser`=@CreateUser
+,`CreateTime`=@CreateTime
+,`UpdateUser`=@UpdateUser
+,`UpdateTime`=@UpdateTime
+,`IsValid`=@IsValid
+ WHERE `ID`=@ID
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="SelectAll" ConnectionName="aicodo" Description="全选" IsGenerate="true">
+          <CommandText>
+SELECT `ID`,`UserName`,`Email`,`Password`,`CreateUser`,`CreateTime`,`UpdateUser`,`UpdateTime`,`IsValid`
+FROM `sys_user` 
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="SelectByKeys" ConnectionName="aicodo" Description="主键选择" IsGenerate="true">
+          <CommandText>
+SELECT `ID`,`UserName`,`Email`,`Password`,`CreateUser`,`CreateTime`,`UpdateUser`,`UpdateTime`,`IsValid`
+FROM `sys_user` 
+WHERE `ID`=@ID
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="SelectByUserName" ConnectionName="aicodo" Description="主键选择">
+          <CommandText>
+SELECT `ID`,`UserName`,`Email`,`Password`,`CreateUser`,`CreateTime`,`UpdateUser`,`UpdateTime`,`IsValid`
+FROM `sys_user` 
+WHERE `UserName`=@UserName				
+			</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+        <Sql Name="Count" ConnectionName="aicodo" SqlType="Scalar" Description="记录数" IsGenerate="true">
+          <CommandText>
+SELECT count(*) FROM `sys_user` 
+</CommandText>
+          <Parameters />
+          <ResultConverters />
+        </Sql>
+      </Table>
+    </Group>
+  </Groups>
+</SqlData>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="AiCodo.Core" Version="1.0.0" />
+	  <PackageReference Include="AiCodo.Core.Data" Version="1.0.0" />
+	  <PackageReference Include="AiCodo.Core.Exp" Version="1.0.0" />
+	  <PackageReference Include="AiCodo.Core.Flow" Version="1.0.0" />
+	</ItemGroup>
+</Project>

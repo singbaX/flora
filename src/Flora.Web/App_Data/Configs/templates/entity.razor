@@ -1,0 +1,49 @@
+﻿@using AiCodo
+@using AiCodo.Data
+@using AiCodo.Codes
+@{
+    var sql = Model.Sql;
+    var table = Model.Context;
+    var setting = Model.Setting;
+    var providerName = table.Connection.ProviderName;
+    var baseColumns = new string[] { "ID", "CreateUser", "CreateTime", "UpdateUser", "UpdateTime", "IsValid", "DeviceID" };
+    var columns = table.Columns.Where(c => baseColumns.FirstOrDefault(f => f == c.Name) == null);
+}/*@(table.Name)*/
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace @setting.Namespace
+{
+    public partial class @table.CodeName : RowEntity
+    {
+        public @(table.CodeName)()
+        {
+@foreach(var col in columns){
+<text>            @(col.Name)= @setting.GetDefaultValue(col.DataType,providerName);
+</text>
+}
+        }
+
+        #region columns
+@foreach(var col in columns){
+<text>
+        #region property @col.Name 
+        /* @col.Comment */
+        public @setting.GetCodeType(col.DataType,providerName) @col.Name
+        {
+            get
+            {
+                return GetFieldValue<@(setting.GetCodeType(col.DataType,providerName))>("@col.Name", @setting.GetDefaultValue(col.DataType,providerName));
+            }
+            set
+            {
+                SetFieldValue("@col.Name", value);
+            }
+        }
+        #endregion
+</text>
+}
+        #endregion
+    }
+}

@@ -1,0 +1,52 @@
+﻿@using AiCodo;
+@using AiCodo.Data;
+@using System.Linq;
+@{
+    var sql = Model.Sql;
+    var table = Model.Context;
+    var setting = Model.Setting;
+    var ignoreParameters = "UpdateUser,UpdateTime,CurrentUserID".Split(',');
+}/*@(table.Name)*/
+using System;
+using System.IO;
+
+namespace @setting.Namespace
+{
+    public static class @(table.CodeName)Service
+    {
+        const string TableName = "@table.Name";
+@foreach (var item in table.Items)
+{
+    var parameters = item.CommandText.GetParameters().Where(p => p.IsFirstCharUpper()).Where(p => !ignoreParameters.Contains(p)).ToArray();
+    var typeNames = parameters.Select(p => $"{sql.GetColumnType(table.Name, p)} {p.ToFirstCharLower()}").AggregateStrings();
+    var nameValues = parameters.Length > 0 ? ("," + parameters.Select(p => $"\"{p}\",{p.ToFirstCharLower()}").AggregateStrings()) : "";
+    var url=$"{table.Name}.{item.Name}";
+    switch (item.SqlType)
+    {
+        case SqlType.Query:
+<text>        public static IEnumerable<T> @(item.Name.ToFirstCharUpper())<T> (@Html.Raw(typeNames)) where T:IEntity,new()
+        {
+            return WebService.Request<List<T>>("@url"@Html.Raw(nameValues));
+        }
+</text>
+            break;
+        case SqlType.Execute:
+<text>        public static int @(item.Name.ToFirstCharUpper())(@Html.Raw(typeNames))
+        {
+            return WebService.Request<int>("@url"@Html.Raw(nameValues));
+        }
+</text>
+            break;
+        case SqlType.Scalar:
+<text>        public static T @(item.Name.ToFirstCharUpper())<T>(@Html.Raw(typeNames))
+        {
+            return WebService.Request<T>("@url"@Html.Raw(nameValues));
+        }
+</text>
+            break;
+        default:
+            break;
+    }
+}
+    }
+}
